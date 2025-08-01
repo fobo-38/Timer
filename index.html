@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="icon" type="image/x-icon" href="./images/magic.png">
+    <link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'>
+</head>
+<body>
+    <div id="container">
+        <h1>Timer</h1>
+        <div id="time">
+            <label id="minute">00</label>
+            <label id="semi">:</label>
+            <label id="second">00</label>
+        </div>
+        <div id="up">
+            <button onclick="changeMin('up')" class="up-btn">&and;</button>
+            <button onclick="changeSec('up')" class="up-btn">&and;</button>
+        </div>
+        <div id="down">
+            <button onclick="changeMin('down')" class="down-btn">&or;</button>
+            <button onclick="changeSec('down')" class="down-btn">&or;</button>
+        </div>
+        <div id="start">
+            <button onclick="startTimer()" id="start-btn">Start</button>
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'JetBrains Mono';
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 520px;
+    height: 502px;
+    border-radius: 15px;
+    background-color: #DCCFC0;
+}
+
+h1 {
+    position: absolute;
+    color: #FAF9EE;
+    font-size: 64px;
+}
+
+#time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 275px;
+    height: 110px;
+    top: 195px;
+    border-radius: 15px;
+    background-color: #A2AF9B;
+}
+
+label {
+    color: #EEEEEE;
+    font-size: 64px;
+}
+
+#up {
+    position: absolute;
+    top: 130px;
+}
+
+#down {
+    position: absolute;
+    top: 300px;
+}
+
+.up-btn, .down-btn {
+    margin: 15px;
+    width: 80px;
+    height: 40px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #A2AF9B;
+    border: none;
+    border-radius: 15px;
+    background-color: #FAF9EE;
+    cursor: pointer;
+}
+
+.up-btn:hover, .down-btn:hover {
+    background-color: #e9e8dd ;
+}
+
+#start {
+    position: absolute;
+    bottom: 40px;
+}
+
+#start-btn {
+    width: 215px;
+    height: 70px;
+    font-family: 'JetBrains Mono';
+    color: #A2AF9B;
+    font-size: 48px;
+    background-color: #FAF9EE;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+#start-btn:hover {
+    background-color: #e6e8dd;
+}
