@@ -1,0 +1,95 @@
+const minuteTime = document.getElementById('minute');
+const secondTime = document.getElementById('second');
+const startBtn = document.getElementById('start-btn');
+
+let totalSeconds = 0;
+let isRunning = false;
+
+let minTime = 0;
+let secTime = 0;
+const max = 59;
+const min = 0;
+
+function changeMin(direction) {
+    if (direction === 'up') {
+        minTime++;
+        if (minTime > max) {
+            minTime = min;
+        }
+    }
+    else if (direction === 'down') {
+        minTime--;
+        if (minTime < min) {
+            minTime = max;
+        }
+    }
+
+    if (minTime < 10) {
+        minuteTime.innerText = `0${minTime}`;
+    }
+    else if (minTime < 60) {
+        minuteTime.innerText = minTime;
+    }
+}
+
+function changeSec(direction) {
+    if (direction === 'up') {
+        secTime++;
+        if (secTime > max) {
+            secTime = min;
+        }
+    }
+    else if (direction === 'down') {
+        secTime--;
+        if (secTime < min) {
+            secTime = max;
+        }
+    }
+
+    if (secTime < 10) {
+        secondTime.innerText = `0${secTime}`;
+    }
+    else if (secTime < 60) {
+        secondTime.innerText = secTime;
+    }
+}
+
+function startTimer() {
+    if (isRunning) {
+        return;
+    }
+
+    totalSeconds = (minTime * 60) + secTime;
+
+    if (totalSeconds <= 0) {
+        return;
+    }
+
+    isRunning = true;
+
+    let timerInterval = setInterval(() => {
+        totalSeconds--;
+
+        minTime = Math.floor(totalSeconds / 60);
+        secTime = totalSeconds % 60;
+        
+        if (minTime < 10) {
+            minuteTime.innerText = `0${minTime}`;
+        }
+        else {
+            minuteTime.innerText = minTime;
+        }
+
+        if (secTime < 10) {
+            secondTime.innerText = `0${secTime}`;
+        }
+        else {
+            secondTime.innerText = secTime;
+        }
+
+        if (totalSeconds <= 0) {
+            clearInterval(timerInterval);
+            isRunning = false;
+        }
+    }, 1000);
+}
