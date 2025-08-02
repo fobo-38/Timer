@@ -3,6 +3,10 @@ const secondTime = document.getElementById('second');
 const startBtn = document.getElementById('start-btn');
 const pauseBtn = document.getElementById('pause-btn');
 const resetBtn = document.getElementById('reset-btn');
+const upBtn_min = document.getElementById('up-min');
+const upBtn_sec = document.getElementById('up-sec');
+const downBtn_min = document.getElementById('down-min');
+const downBtn_sec = document.getElementById('down-sec');
 
 let timerInterval;
 let totalSeconds = 0;
@@ -71,6 +75,11 @@ function startTimer() {
     isRunning = true;
     startBtn.innerText = 'Running';
 
+    upBtn_min.disabled = true;
+    upBtn_sec.disabled = true;
+    downBtn_min.disabled = true;
+    downBtn_sec.disabled = true;
+
     timerInterval = setInterval(() => {
         totalSeconds--;
 
@@ -110,4 +119,8 @@ function resetTimer() {
     secTime = 0;
     minuteTime.innerText = '00';
     secondTime.innerText = '00';
+    upBtn_min.disabled = false;
+    upBtn_sec.disabled = false;
+    downBtn_min.disabled = false;
+    downBtn_sec.disabled = false;
 }
