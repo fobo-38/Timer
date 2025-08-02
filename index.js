@@ -1,7 +1,10 @@
 const minuteTime = document.getElementById('minute');
 const secondTime = document.getElementById('second');
 const startBtn = document.getElementById('start-btn');
+const pauseBtn = document.getElementById('pause-btn');
+const resetBtn = document.getElementById('reset-btn');
 
+let timerInterval;
 let totalSeconds = 0;
 let isRunning = false;
 
@@ -66,8 +69,9 @@ function startTimer() {
     }
 
     isRunning = true;
+    startBtn.innerText = 'Running';
 
-    let timerInterval = setInterval(() => {
+    timerInterval = setInterval(() => {
         totalSeconds--;
 
         minTime = Math.floor(totalSeconds / 60);
@@ -92,4 +96,18 @@ function startTimer() {
             isRunning = false;
         }
     }, 1000);
+}
+
+function pauseTimer() {
+    clearInterval(timerInterval);
+    isRunning = false;
+    startBtn.innerText = 'Start';
+}
+
+function resetTimer() {
+    pauseTimer();
+    minTime = 0;
+    secTime = 0;
+    minuteTime.innerText = '00';
+    secondTime.innerText = '00';
 }

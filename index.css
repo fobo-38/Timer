@@ -54,7 +54,6 @@ label {
 
 .up-btn, .down-btn {
     margin: 15px;
-    text-align: center;
     width: 80px;
     height: 40px;
     font-size: 30px;
@@ -88,5 +87,27 @@ label {
 }
 
 #start-btn:hover {
+    background-color: #e6e8dd;
+}
+
+#pause-btn, #reset-btn {
+    width: 100px;
+    height: 55px;
+    position: relative;
+    top: 400px;
+    font-family: 'JetBrains Mono';
+    color: #A2AF9B;
+    font-size: 24px;
+    background-color: #FAF9EE;
+    border: 4px solid #cac9c0;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+#pause-btn {
+    margin-right: 250px;
+}
+
+#pause-btn:hover, #reset-btn:hover {
     background-color: #e6e8dd;
 }
