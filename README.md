@@ -7,7 +7,7 @@ Allows users to pause, resume, and restart the timer. Includes interactive displ
 ## Built With
 - `HTML`
 - `CSS`
-- `JavaScrip`
+- `JavaScript`
 
 ## Features
 - Set custom timer duration with up/down buttons
